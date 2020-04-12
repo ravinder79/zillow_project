@@ -10,3 +10,4 @@ solutions.py
 env.py
 *.csv
 *.xlsx
+*.xlsm
