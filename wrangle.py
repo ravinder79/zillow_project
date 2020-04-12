@@ -10,7 +10,8 @@ def get_db_url(database):
 
 def get_data_from_sql():
     query = """
-    SELECT bathroomcnt AS bathrooms, bedroomcnt AS bedrooms, `calculatedfinishedsquarefeet` AS square_feet, fips, `lotsizesquarefeet` AS lot_size, poolcnt AS pool, `regionidzip` AS zip_code, yearbuilt AS year_built, `taxvaluedollarcnt` AS assessed_value, `taxamount` AS tax_value, transactiondate AS transaction_date FROM properties_2017
+    SELECT bathroomcnt AS bathrooms, bedroomcnt AS bedrooms, `calculatedfinishedsquarefeet` AS square_feet, fips, `lotsizesquarefeet` AS lot_size, poolcnt AS pool, 
+    `regionidzip` AS zip_code, yearbuilt AS year_built, latitude, longitude,`taxvaluedollarcnt` AS assessed_value, `taxamount` AS tax_value, transactiondate AS transaction_date FROM properties_2017
     JOIN predictions_2017 USING (parcelid)
     WHERE transactiondate >= '2017-05-01' AND transactiondate <= '2017-06-30'
     AND propertylandusetypeid = 261 AND bedroomcnt > 0 AND bathroomcnt> 0
@@ -26,7 +27,7 @@ def wrangle_zillow():
     """
     df = get_data_from_sql()
     df = df.dropna(subset=['lot_size', 'year_built', 'tax_value', 'zip_code'])
-    df.fillna(0, inplace = True)
+    df = df.fillna(0)
     df['fips'] =df.fips.astype(int)
     df['zip_code'] =df.zip_code.astype(int)
     df['year_built'] =df.year_built.astype(int)
