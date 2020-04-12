@@ -15,8 +15,6 @@
 
 
 
-
-
 ## SQL Data Acquisition 
 Must use your own env file to access data.
 
@@ -66,6 +64,23 @@ age             :      14873 non-null int64 (age of home)\
 zip_median      :      14873 non-null float64 (median home price of a zip code calculated from Training Data)\
 log2_zip_median  :     14873 non-null float64 (log2 of zip_median)\
 haversine_distance   : 14873 non-null float64 (distance between two points on earth)\
+
+# Files in this repo you need to run this (you will need your own env file)
+* wrangle.py
+* evaluate.py
+* explore.py
+* models.py
+* Zillow_project_notebook.ipynb (Main notebook)
+* zillow_explore.ipynb (notebook used for exploration only)
+
+# Executive Summary
+* Location! Location! Location! Implication: “Location matters”
+* Location, home size (sq feet) and neighbourhood (e.g. median zip code home prices) are major driver of home value
+    * Inland house values are lower than coastal house values. There are clusters of higher and lower values homes
+    * Adding Geo-Spatial parameters (e.g. haversine distance) in models should help improve accuracy
+
+* Other classification methods (KNN/Decision tree) should help improve the accuracy of models.
+
 
 # Summary of findings
 See the link below for summary slides
