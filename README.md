@@ -70,3 +70,4 @@ haversine_distance   : 14873 non-null float64 (distance between two points on ea
 # Summary of findings
 See the link below for summary slides
 
+https://docs.google.com/presentation/d/1glw4Udz6z8rrbGHgXGB5m5Gg88Ss7asb7lqrd8KiGaM/edit?usp=sharing
