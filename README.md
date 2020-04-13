@@ -14,6 +14,10 @@
 ***
 
 
+## Install pyGAM (https://pygam.readthedocs.io/en/latest/) before running jupyter notebook. This library is needed to GAM models i used
+
+***
+
 
 ## SQL Data Acquisition 
 Must use your own env file to access data.
@@ -72,6 +76,7 @@ haversine_distance   : 14873 non-null float64 (distance between two points on ea
 * models.py
 * Zillow_project_notebook.ipynb (Main notebook)
 * zillow_explore.ipynb (notebook used for exploration only)
+
 
 # Executive Summary
 * Location! Location! Location! Implication: “Location matters”
