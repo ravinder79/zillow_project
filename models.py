@@ -20,6 +20,13 @@ from sklearn.compose import TransformedTargetRegressor
 
 
 
+def ols_model_log(X,y):
+    predictions = pd.DataFrame({
+    'actual': y_train.log2value
+    })
+    #predictions.head(2)
+    from statsmodels.formula.api import ols
+    
 def GAM_linear(X, y):
     X= X.to_numpy()
     y = y.to_numpy()
