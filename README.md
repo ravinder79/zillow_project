@@ -46,48 +46,56 @@ Lets do some hypothesis testing
 
 ## Data Dictionary
 
-bathrooms : 14873 non-null float64\
-bedrooms :  14873 non-null float64\
-square_feet  :         14873 non-null float64\
-fips      :            14873 non-null int64\
-lot_size   :           14873 non-null int64\
-pool     :             14873 non-null int64\
-zip_code     :         14873 non-null int64\
-year_built    :        14873 non-null int64\
-latitude      :        14873 non-null float64\
-longitude      :       14873 non-null float64\
-assessed_value  :      14873 non-null float64\
-tax_value       :      14873 non-null float64\
-transaction_date   :   14873 non-null object\
-tax_rate       :       14873 non-null float64\
-County         :       14873 non-null object\
-log2sf          :      14873 non-null float64 (log2 of square feet)\
-log2lot_size    :      14873 non-null float64 (log2 of lot size)\
-log2value       :      14873 non-null float64 (log2 of home assessed value)\
-age             :      14873 non-null int64 (age of home)\
-zip_median      :      14873 non-null float64 (median home price of a zip code calculated from Training Data)\
-log2_zip_median  :     14873 non-null float64 (log2 of zip_median)\
-haversine_distance   : 14873 non-null float64 (distance between two points on earth)\
+payment_type_id:              7043 non-null int64  (payment type id)\
+
+internet_service_type_id  :  7043 non-null int64 (type of internet service subscribed)\
+
+contract_type_id    :        7043 non-null int64 (type of contract, month-to-month, one year, two year)\
+customer_id       :          7043 non-null object (unique customer ID)\
+gender            :          7043 non-null object (male or female)\
+senior_citizen    :          7043 non-null int64  (senior citizen or not)\
+partner           :          7043 non-null object (have partner or is single)\
+dependents        :          7043 non-null object (has dependents or not)\
+tenure            :          7043 non-null int64 (how long with company in months)\
+phone_service     :          7043 non-null object (has phone service or not)\
+multiple_lines     :         7043 non-null object (has multiple phone lines or  not)\
+online_security    :         7043 non-null object (have online security service subscribed)\
+online_backup     :          7043 non-null object (have online backup service subscribed)\
+device_protection :          7043 non-null object (have device_protection service subscribed)\
+tech_support        :        7043 non-null object (have tech_support service subscribed)\
+streaming_tv       :         7043 non-null object (streams tv)\
+streaming_movies   :         7043 non-null object (streams movies)\
+paperless_billing   :        7043 non-null object (have paperless billing)\
+monthly_charges    :         7043 non-null float64 (monthly charges)\
+total_charges      :         7043 non-null object (total charges during the tenure)\
+churn              :         7043 non-null object (whether churned or not)\
+contract_type      :         7043 non-null object (contract type month-to-month, one year, two year)\
+internet_service_type  :     7043 non-null object (Fiber optic, DSL or none as service)\
+payment_type         :       7043 non-null object (type of payment method used by subscriber)\
 
 # Files in this repo you need to run this (you will need your own env file)
+* acquire_r.py
 * wrangle.py
 * evaluate.py
-* explore.py
+* preprocess.py
 * models.py
-* Zillow_project_notebook.ipynb (Main notebook)
-* zillow_explore.ipynb (notebook used for exploration only)
+* logistic_regression_util.py
+* knn_lesson_util.py
+* Telco_Churn_Final.ipynb (Main notebook)
 
 
 # Executive Summary
-* Location! Location! Location! Implication: “Location matters”
-* Location, home size (sq feet) and neighbourhood (e.g. median zip code home prices) are major driver of home value
-    * Inland house values are lower than coastal house values. There are clusters of higher and lower values homes
-    * Adding Geo-Spatial parameters (e.g. haversine distance) in models should help improve accuracy
+* We created a logistic regression model to predict customers who are likely to churn.
+* The model is able to correctly predict 80% of customers who actually churn.
+* Customers most likely to churn:\
+** Month to month contract\
+** New customers (tenure less than 2 years)\
+** Have fiber optic internet
+* Focus resources on retaining ‘new’ customers since company does fine retaining the longer tenured customers
 
-* Other classification methods (KNN/Decision tree) should help improve the accuracy of models.
 
 
 # Summary of findings
 See the link below for summary slides
 
-https://docs.google.com/presentation/d/1glw4Udz6z8rrbGHgXGB5m5Gg88Ss7asb7lqrd8KiGaM/edit?usp=sharing
+https://docs.google.com/presentation/d/1ODagzmh01di-fNy54dmKlKO4DzZ1UNsL3oVOOEth95E/edit?usp=sharing
