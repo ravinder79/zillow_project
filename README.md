@@ -98,4 +98,4 @@ payment_type         :       7043 non-null object (type of payment method used b
 # Summary of findings
 See the link below for summary slides
 
-https://docs.google.com/presentation/d/1ODagzmh01di-fNy54dmKlKO4DzZ1UNsL3oVOOEth95E/edit?usp=sharing
+https://docs.google.com/presentation/d/1glw4Udz6z8rrbGHgXGB5m5Gg88Ss7asb7lqrd8KiGaM/edit?usp=sharing
